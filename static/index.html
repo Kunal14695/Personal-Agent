@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Assistant AI Agent</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="glass-bg"></div>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <div class="avatar-glow">
+                    <span class="avatar-text">PA</span>
+                </div>
+                <div>
+                    <h1>Personal Assistant</h1>
+                    <p class="status-subtitle">
+                        <span class="status-dot"></span> Connected to Gemini
+                    </p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="status-badge" id="model-badge">Gemini 3.5 Flash</div>
+                <div class="status-badge" id="mode-badge">Live Mode</div>
+            </div>
+        </header>
+
+        <!-- Chat Area -->
+        <main class="chat-area" id="chat-messages">
+            <!-- Messages will be dynamically rendered here -->
+            <div class="message system-msg">
+                <div class="message-content">
+                    <p>🤖 Welcome! I am your Personal Assistant Agent. I can help you search the web, manage your Gmail, Google Calendar, Tasks, Contacts, and read/write local files. Ask me anything to get started!</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Approval Drawer (Human-in-the-loop) -->
+        <div class="approval-drawer-overlay" id="approval-overlay">
+            <div class="approval-drawer" id="approval-drawer">
+                <div class="drawer-header">
+                    <div class="warning-icon">⚠️</div>
+                    <h3>Approval Required</h3>
+                    <p>The agent is requesting permission to execute the following actions:</p>
+                </div>
+                <div class="drawer-content" id="pending-actions-list">
+                    <!-- Action cards will be rendered here -->
+                </div>
+                <div class="drawer-actions">
+                    <button class="btn btn-secondary" id="btn-reject-all">Reject All</button>
+                    <button class="btn btn-primary" id="btn-approve-all">Approve All</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Input Form -->
+        <footer class="app-footer">
+            <form class="chat-form" id="chat-form">
+                <input type="text" id="chat-input" placeholder="Ask me to summarize emails, book a meeting, add a task..." autocomplete="off" required>
+                <button type="submit" class="send-btn" id="send-btn">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </form>
+        </footer>
+    </div>
+    
+    <script src="/static/app.js"></script>
+</body>
+</html>

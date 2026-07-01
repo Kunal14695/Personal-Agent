@@ -1,0 +1,14 @@
+# Ignore private environment keys
+.env
+
+# Ignore Google OAuth Client credentials
+credentials.json
+
+# Ignore cached Google access tokens
+token.json
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
